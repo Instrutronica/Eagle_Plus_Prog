@@ -93,6 +93,8 @@
             this.tBox_AC = new System.Windows.Forms.TextBox();
             this.label_AC = new System.Windows.Forms.Label();
             this.tabFtp = new System.Windows.Forms.TabPage();
+            this.cBox_LF = new System.Windows.Forms.ComboBox();
+            this.ckBox_FL = new System.Windows.Forms.CheckBox();
             this.tBox_FS = new System.Windows.Forms.TextBox();
             this.label_FS = new System.Windows.Forms.Label();
             this.tBox_FW = new System.Windows.Forms.TextBox();
@@ -100,13 +102,13 @@
             this.tBox_FT = new System.Windows.Forms.TextBox();
             this.label_FT = new System.Windows.Forms.Label();
             this.label_FL = new System.Windows.Forms.Label();
-            this.tBox_LF = new System.Windows.Forms.TextBox();
             this.label_LF = new System.Windows.Forms.Label();
             this.tBox_FU = new System.Windows.Forms.TextBox();
             this.label_FU = new System.Windows.Forms.Label();
             this.tBox_FH = new System.Windows.Forms.TextBox();
             this.label_FH = new System.Windows.Forms.Label();
             this.tabSms = new System.Windows.Forms.TabPage();
+            this.ckBox_AL = new System.Windows.Forms.CheckBox();
             this.label_C2 = new System.Windows.Forms.Label();
             this.tBox_C2 = new System.Windows.Forms.TextBox();
             this.label_C1 = new System.Windows.Forms.Label();
@@ -114,10 +116,9 @@
             this.label_C0 = new System.Windows.Forms.Label();
             this.tBox_C0 = new System.Windows.Forms.TextBox();
             this.label_AL = new System.Windows.Forms.Label();
-            this.tBox_LS = new System.Windows.Forms.TextBox();
             this.label_LS = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.cBox_LS = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -677,6 +678,7 @@
             this.tBox_IE.Name = "tBox_IE";
             this.tBox_IE.Size = new System.Drawing.Size(66, 20);
             this.tBox_IE.TabIndex = 19;
+            this.tBox_IE.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_IE_KeyDown);
             // 
             // label_IE
             // 
@@ -693,6 +695,7 @@
             this.tBox_IS.Name = "tBox_IS";
             this.tBox_IS.Size = new System.Drawing.Size(66, 20);
             this.tBox_IS.TabIndex = 21;
+            this.tBox_IS.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_IS_KeyDown);
             // 
             // label_IS
             // 
@@ -709,6 +712,7 @@
             this.tBox_TI.Name = "tBox_TI";
             this.tBox_TI.Size = new System.Drawing.Size(87, 20);
             this.tBox_TI.TabIndex = 13;
+            this.tBox_TI.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_TI_KeyDown);
             // 
             // label_TI
             // 
@@ -725,6 +729,7 @@
             this.tBox_AC.Name = "tBox_AC";
             this.tBox_AC.Size = new System.Drawing.Size(87, 20);
             this.tBox_AC.TabIndex = 15;
+            this.tBox_AC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_AC_KeyDown);
             // 
             // label_AC
             // 
@@ -737,6 +742,8 @@
             // 
             // tabFtp
             // 
+            this.tabFtp.Controls.Add(this.cBox_LF);
+            this.tabFtp.Controls.Add(this.ckBox_FL);
             this.tabFtp.Controls.Add(this.tBox_FS);
             this.tabFtp.Controls.Add(this.label_FS);
             this.tabFtp.Controls.Add(this.tBox_FW);
@@ -744,7 +751,6 @@
             this.tabFtp.Controls.Add(this.tBox_FT);
             this.tabFtp.Controls.Add(this.label_FT);
             this.tabFtp.Controls.Add(this.label_FL);
-            this.tabFtp.Controls.Add(this.tBox_LF);
             this.tabFtp.Controls.Add(this.label_LF);
             this.tabFtp.Controls.Add(this.tBox_FU);
             this.tabFtp.Controls.Add(this.label_FU);
@@ -756,6 +762,50 @@
             this.tabFtp.TabIndex = 2;
             this.tabFtp.Text = "FTP";
             this.tabFtp.UseVisualStyleBackColor = true;
+            // 
+            // cBox_LF
+            // 
+            this.cBox_LF.FormattingEnabled = true;
+            this.cBox_LF.Items.AddRange(new object[] {
+            "00:00",
+            "01:00",
+            "02:00",
+            "03:00",
+            "04:00",
+            "05:00",
+            "06:00",
+            "07:00",
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00",
+            "19:00",
+            "20:00",
+            "21:00",
+            "22:00",
+            "23:00"});
+            this.cBox_LF.Location = new System.Drawing.Point(359, 56);
+            this.cBox_LF.Name = "cBox_LF";
+            this.cBox_LF.Size = new System.Drawing.Size(67, 21);
+            this.cBox_LF.TabIndex = 42;
+            this.cBox_LF.SelectionChangeCommitted += new System.EventHandler(this.cBox_LF_SelectionChangeCommitted);
+            // 
+            // ckBox_FL
+            // 
+            this.ckBox_FL.AutoSize = true;
+            this.ckBox_FL.Location = new System.Drawing.Point(360, 28);
+            this.ckBox_FL.Name = "ckBox_FL";
+            this.ckBox_FL.Size = new System.Drawing.Size(15, 14);
+            this.ckBox_FL.TabIndex = 41;
+            this.ckBox_FL.UseVisualStyleBackColor = true;
+            this.ckBox_FL.Click += new System.EventHandler(this.ckBox_FL_Click);
             // 
             // tBox_FS
             // 
@@ -811,24 +861,16 @@
             // label_FL
             // 
             this.label_FL.AutoSize = true;
-            this.label_FL.Location = new System.Drawing.Point(273, 28);
+            this.label_FL.Location = new System.Drawing.Point(284, 28);
             this.label_FL.Name = "label_FL";
             this.label_FL.Size = new System.Drawing.Size(69, 13);
             this.label_FL.TabIndex = 34;
             this.label_FL.Text = "Activar FTP: ";
             // 
-            // tBox_LF
-            // 
-            this.tBox_LF.Location = new System.Drawing.Point(348, 56);
-            this.tBox_LF.Name = "tBox_LF";
-            this.tBox_LF.Size = new System.Drawing.Size(111, 20);
-            this.tBox_LF.TabIndex = 29;
-            this.tBox_LF.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_LF_KeyDown);
-            // 
             // label_LF
             // 
             this.label_LF.AutoSize = true;
-            this.label_LF.Location = new System.Drawing.Point(237, 59);
+            this.label_LF.Location = new System.Drawing.Point(248, 59);
             this.label_LF.Name = "label_LF";
             this.label_LF.Size = new System.Drawing.Size(105, 13);
             this.label_LF.TabIndex = 30;
@@ -870,6 +912,8 @@
             // 
             // tabSms
             // 
+            this.tabSms.Controls.Add(this.cBox_LS);
+            this.tabSms.Controls.Add(this.ckBox_AL);
             this.tabSms.Controls.Add(this.label_C2);
             this.tabSms.Controls.Add(this.tBox_C2);
             this.tabSms.Controls.Add(this.label_C1);
@@ -877,7 +921,6 @@
             this.tabSms.Controls.Add(this.label_C0);
             this.tabSms.Controls.Add(this.tBox_C0);
             this.tabSms.Controls.Add(this.label_AL);
-            this.tabSms.Controls.Add(this.tBox_LS);
             this.tabSms.Controls.Add(this.label_LS);
             this.tabSms.Location = new System.Drawing.Point(4, 22);
             this.tabSms.Name = "tabSms";
@@ -886,10 +929,20 @@
             this.tabSms.Text = "SMS";
             this.tabSms.UseVisualStyleBackColor = true;
             // 
+            // ckBox_AL
+            // 
+            this.ckBox_AL.AutoSize = true;
+            this.ckBox_AL.Location = new System.Drawing.Point(381, 26);
+            this.ckBox_AL.Name = "ckBox_AL";
+            this.ckBox_AL.Size = new System.Drawing.Size(15, 14);
+            this.ckBox_AL.TabIndex = 45;
+            this.ckBox_AL.UseVisualStyleBackColor = true;
+            this.ckBox_AL.Click += new System.EventHandler(this.ckBox_AL_Click);
+            // 
             // label_C2
             // 
             this.label_C2.AutoSize = true;
-            this.label_C2.Location = new System.Drawing.Point(42, 103);
+            this.label_C2.Location = new System.Drawing.Point(28, 87);
             this.label_C2.Name = "label_C2";
             this.label_C2.Size = new System.Drawing.Size(42, 13);
             this.label_C2.TabIndex = 44;
@@ -897,7 +950,7 @@
             // 
             // tBox_C2
             // 
-            this.tBox_C2.Location = new System.Drawing.Point(108, 100);
+            this.tBox_C2.Location = new System.Drawing.Point(94, 84);
             this.tBox_C2.Name = "tBox_C2";
             this.tBox_C2.Size = new System.Drawing.Size(87, 20);
             this.tBox_C2.TabIndex = 43;
@@ -906,7 +959,7 @@
             // label_C1
             // 
             this.label_C1.AutoSize = true;
-            this.label_C1.Location = new System.Drawing.Point(42, 72);
+            this.label_C1.Location = new System.Drawing.Point(28, 56);
             this.label_C1.Name = "label_C1";
             this.label_C1.Size = new System.Drawing.Size(42, 13);
             this.label_C1.TabIndex = 42;
@@ -914,7 +967,7 @@
             // 
             // tBox_C1
             // 
-            this.tBox_C1.Location = new System.Drawing.Point(108, 69);
+            this.tBox_C1.Location = new System.Drawing.Point(94, 53);
             this.tBox_C1.Name = "tBox_C1";
             this.tBox_C1.Size = new System.Drawing.Size(87, 20);
             this.tBox_C1.TabIndex = 41;
@@ -923,7 +976,7 @@
             // label_C0
             // 
             this.label_C0.AutoSize = true;
-            this.label_C0.Location = new System.Drawing.Point(42, 41);
+            this.label_C0.Location = new System.Drawing.Point(28, 25);
             this.label_C0.Name = "label_C0";
             this.label_C0.Size = new System.Drawing.Size(42, 13);
             this.label_C0.TabIndex = 40;
@@ -931,7 +984,7 @@
             // 
             // tBox_C0
             // 
-            this.tBox_C0.Location = new System.Drawing.Point(108, 38);
+            this.tBox_C0.Location = new System.Drawing.Point(94, 22);
             this.tBox_C0.Name = "tBox_C0";
             this.tBox_C0.Size = new System.Drawing.Size(87, 20);
             this.tBox_C0.TabIndex = 39;
@@ -940,24 +993,16 @@
             // label_AL
             // 
             this.label_AL.AutoSize = true;
-            this.label_AL.Location = new System.Drawing.Point(290, 41);
+            this.label_AL.Location = new System.Drawing.Point(297, 25);
             this.label_AL.Name = "label_AL";
             this.label_AL.Size = new System.Drawing.Size(72, 13);
             this.label_AL.TabIndex = 36;
             this.label_AL.Text = "Activar SMS: ";
             // 
-            // tBox_LS
-            // 
-            this.tBox_LS.Location = new System.Drawing.Point(374, 69);
-            this.tBox_LS.Name = "tBox_LS";
-            this.tBox_LS.Size = new System.Drawing.Size(87, 20);
-            this.tBox_LS.TabIndex = 37;
-            this.tBox_LS.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_LS_KeyDown);
-            // 
             // label_LS
             // 
             this.label_LS.AutoSize = true;
-            this.label_LS.Location = new System.Drawing.Point(254, 72);
+            this.label_LS.Location = new System.Drawing.Point(261, 56);
             this.label_LS.Name = "label_LS";
             this.label_LS.Size = new System.Drawing.Size(108, 13);
             this.label_LS.TabIndex = 38;
@@ -965,7 +1010,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.progressBar2);
             this.groupBox3.Controls.Add(this.btnLoadConf);
             this.groupBox3.Controls.Add(this.btnCleanTBox);
             this.groupBox3.Location = new System.Drawing.Point(259, 292);
@@ -974,12 +1018,39 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             // 
-            // progressBar2
+            // cBox_LS
             // 
-            this.progressBar2.Location = new System.Drawing.Point(275, 24);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(194, 23);
-            this.progressBar2.TabIndex = 37;
+            this.cBox_LS.FormattingEnabled = true;
+            this.cBox_LS.Items.AddRange(new object[] {
+            "00:00",
+            "01:00",
+            "02:00",
+            "03:00",
+            "04:00",
+            "05:00",
+            "06:00",
+            "07:00",
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00",
+            "19:00",
+            "20:00",
+            "21:00",
+            "22:00",
+            "23:00"});
+            this.cBox_LS.Location = new System.Drawing.Point(381, 53);
+            this.cBox_LS.Name = "cBox_LS";
+            this.cBox_LS.Size = new System.Drawing.Size(67, 21);
+            this.cBox_LS.TabIndex = 46;
+            this.cBox_LS.SelectionChangeCommitted += new System.EventHandler(this.cBox_LS_SelectionChangeCommitted);
             // 
             // Main
             // 
@@ -1093,7 +1164,6 @@
         private System.Windows.Forms.TextBox tBox_FT;
         private System.Windows.Forms.Label label_FT;
         private System.Windows.Forms.Label label_FL;
-        private System.Windows.Forms.TextBox tBox_LF;
         private System.Windows.Forms.Label label_LF;
         private System.Windows.Forms.TextBox tBox_FU;
         private System.Windows.Forms.Label label_FU;
@@ -1107,10 +1177,12 @@
         private System.Windows.Forms.Label label_C0;
         private System.Windows.Forms.TextBox tBox_C0;
         private System.Windows.Forms.Label label_AL;
-        private System.Windows.Forms.TextBox tBox_LS;
         private System.Windows.Forms.Label label_LS;
-        private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Button btnModbus;
+        private System.Windows.Forms.CheckBox ckBox_FL;
+        private System.Windows.Forms.CheckBox ckBox_AL;
+        private System.Windows.Forms.ComboBox cBox_LF;
+        private System.Windows.Forms.ComboBox cBox_LS;
     }
 }
 

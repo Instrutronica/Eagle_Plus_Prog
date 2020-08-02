@@ -43,11 +43,6 @@ namespace ComPort
             try
             {
                 serialPort1.PortName = cBoxCOMPORT.Text;
-                //serialPort1.BaudRate = Convert.ToInt32(CBoxBaudRate.Text);
-                //serialPort1.DataBits = Convert.ToInt32(cBoxDataBits.Text);
-                //serialPort1.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cBoxStopBits.Text);
-                //serialPort1.Parity = (Parity)Enum.Parse(typeof(Parity), cBoxParityBits.Text);
-
                 serialPort1.Open();
                 progressBar1.Value = 100;
                 btnOpen.Enabled = false;
@@ -184,7 +179,6 @@ namespace ComPort
             tBox_AC.Text = "";
             tBox_IE.Text = "";
             tBox_IS.Text = "";
-            tBox_LS.Text = "";
             tBox_RF.Text = "";
             tBox_LT.Text = "";
             tBox_LG.Text = "";
@@ -199,14 +193,12 @@ namespace ComPort
             tBox_FW.Text = "";
             tBox_FU.Text = "";
             tBox_FT.Text = "";
-            tBox_LF.Text = "";
             tBox_US.Text = "";
             tBox_PS.Text = "";
             tBox_NM.Text = "";
             tBox_NT.Text = "";
             tBox_NE.Text = "";
             tBoxDateTime.Text = "";
-            progressBar2.Value = 0;
         }
 
         private void btnLoadConf_Click(object sender, EventArgs e)
@@ -247,11 +239,19 @@ namespace ComPort
                     serialPort1.Write("AT+AL\r");
                     message = serialPort1.ReadLine();
                     dataRcv = message.Split(spearator, StringSplitOptions.RemoveEmptyEntries);
+                    if (dataRcv[1] == "0")
+                    {
+                        ckBox_AL.Checked = false;
+                    }
+                    if (dataRcv[1] == "1")
+                    {
+                        ckBox_AL.Checked = true;
+                    }
 
                     serialPort1.Write("AT+LS\r");
                     message = serialPort1.ReadLine();
                     dataRcv = message.Split(spearator, StringSplitOptions.RemoveEmptyEntries);
-                    tBox_LS.Text = dataRcv[1];
+                    cBox_LS.SelectedIndex = Int32.Parse(dataRcv[1]);
 
                     serialPort1.Write("AT+RF\r");
                     message = serialPort1.ReadLine();
@@ -331,12 +331,19 @@ namespace ComPort
                     serialPort1.Write("AT+FL\r");
                     message = serialPort1.ReadLine();
                     dataRcv = message.Split(spearator, StringSplitOptions.RemoveEmptyEntries);
-
+                    if (dataRcv[1] == "0") 
+                    {
+                        ckBox_FL.Checked = false;
+                    }
+                    if (dataRcv[1] == "1")
+                    {
+                        ckBox_FL.Checked = true;
+                    }
 
                     serialPort1.Write("AT+LF\r");
                     message = serialPort1.ReadLine();
                     dataRcv = message.Split(spearator, StringSplitOptions.RemoveEmptyEntries);
-                    tBox_LF.Text = dataRcv[1];
+                    cBox_LF.SelectedIndex = Int32.Parse(dataRcv[1]);
 
                     serialPort1.Write("AT+US\r");
                     message = serialPort1.ReadLine();
@@ -364,7 +371,6 @@ namespace ComPort
                     tBox_NE.Text = dataRcv[1];
 
                     disableReceiverControl = false;
-                    progressBar2.Value = 100;
                 }
             }
             catch (Exception err)
@@ -535,61 +541,6 @@ namespace ComPort
             }
         }
 
-        private void tBox_LF_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.Write("AT+LF " + tBox_LF.Text + "\r");
-                }
-            }
-        }
-
-        private void tBox_TI_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.Write("AT+TI " + tBox_TI.Text + "\r");
-                }
-            }
-        }
-
-        private void tBox_AC_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.Write("AT+AC " + tBox_AC.Text + "\r");
-                }
-            }
-        }
-
-        private void tBox_IE_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.Write("AT+IE " + tBox_IE.Text + "\r");
-                }
-            }
-        }
-
-        private void tBox_IS_KeyDown_1(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.Write("AT+IS " + tBox_IS.Text + "\r");
-                }
-            }
-        }
-
         private void tBox_C0_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -623,17 +574,6 @@ namespace ComPort
             }
         }
 
-        private void tBox_LS_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (serialPort1.IsOpen)
-                {
-                    serialPort1.Write("AT+LS " + tBox_LS.Text + "\r");
-                }
-            }
-        }
-
         private void btnModbus_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
@@ -643,5 +583,94 @@ namespace ComPort
 
         }
 
+        private void ckBox_FL_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {               
+                if (ckBox_FL.Checked == false)
+                {
+                    serialPort1.Write("AT+FL 0\r");
+                } 
+                if (ckBox_FL.Checked == true)
+                {
+                    serialPort1.Write("AT+FL 1\r");
+                }
+            }
+        }
+
+        private void ckBox_AL_Click(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                if (ckBox_AL.Checked == false)
+                {
+                    serialPort1.Write("AT+AL 0\r");
+                }
+                if (ckBox_AL.Checked == true)
+                {
+                    serialPort1.Write("AT+AL 1\r");
+                }
+            }
+        }
+
+        private void cBox_LF_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Write("AT+LF " + cBox_LF.SelectedIndex + "\r");
+            }
+        }
+
+        private void tBox_TI_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("AT+TI " + tBox_TI.Text + "\r");
+                }
+            }
+        }
+
+        private void tBox_IS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("AT+IS " + tBox_IS.Text + "\r");
+                }
+            }
+        }
+
+        private void tBox_IE_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("AT+IE " + tBox_IE.Text + "\r");
+                }
+            }
+        }
+
+        private void tBox_AC_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (serialPort1.IsOpen)
+                {
+                    serialPort1.Write("AT+AC " + tBox_AC.Text + "\r");
+                }
+            }
+        }
+
+        private void cBox_LS_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (serialPort1.IsOpen)
+            {
+                serialPort1.Write("AT+LS " + cBox_LS.SelectedIndex + "\r");
+            }
+        }
     }
 }
