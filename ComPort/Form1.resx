@@ -117,10 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRefreshPort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAPJJREFUOE+1k01uQVEYQC8So8aAoYFYAYlhJ5bATAzYgIGuwgZ0B2zAEtp0A+0C
+        GEgMTRhzznOlbarXG7QnOeF+V977/oT/ooBN7OMQ2zGWiy5+4B5f8A0P+I4dTPKIOxxh0UCkhAP0bmIg
+        RTl+3qKOPuRHJjX07XkwE8v51pMlrvEhO6WxnCO2shPY6VN0biBBBWe4xRVOMTzFg0Ev/VGKZ7y+sGdA
+        nLOjMr17WOYGF9kpYkNsjA3Kgw2vXr5+4mgckaP6jdSIM1wSH2ImX8txqcbo3d1xm4nl2BPX+BVda9fb
+        Nc+FPXHO/pHsdCPG/poQznl/KTGItAc7AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="serialPort1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDateTime.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAGtJREFUOE/N
