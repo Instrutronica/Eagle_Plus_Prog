@@ -40,6 +40,7 @@
             this.btnOpen = new System.Windows.Forms.Button();
             this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tBoxPassword = new System.Windows.Forms.TextBox();
             this.btnModbus = new System.Windows.Forms.Button();
             this.btnEnter = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -108,17 +109,30 @@
             this.tBox_FH = new System.Windows.Forms.TextBox();
             this.label_FH = new System.Windows.Forms.Label();
             this.tabSms = new System.Windows.Forms.TabPage();
-            this.ckBox_AL = new System.Windows.Forms.CheckBox();
-            this.label_C2 = new System.Windows.Forms.Label();
-            this.tBox_C2 = new System.Windows.Forms.TextBox();
-            this.label_C1 = new System.Windows.Forms.Label();
-            this.tBox_C1 = new System.Windows.Forms.TextBox();
-            this.label_C0 = new System.Windows.Forms.Label();
+            this.gBoxAlertasSMS = new System.Windows.Forms.GroupBox();
+            this.ckBox_AA = new System.Windows.Forms.CheckBox();
+            this.tBox_CA = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label_CA = new System.Windows.Forms.Label();
+            this.gBoxLecturasSMS = new System.Windows.Forms.GroupBox();
             this.tBox_C0 = new System.Windows.Forms.TextBox();
-            this.label_AL = new System.Windows.Forms.Label();
-            this.label_LS = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cBox_LS = new System.Windows.Forms.ComboBox();
+            this.ckBox_AL = new System.Windows.Forms.CheckBox();
+            this.label_C0 = new System.Windows.Forms.Label();
+            this.label_AL = new System.Windows.Forms.Label();
+            this.tBox_C1 = new System.Windows.Forms.TextBox();
+            this.label_LS = new System.Windows.Forms.Label();
+            this.label_C2 = new System.Windows.Forms.Label();
+            this.label_C1 = new System.Windows.Forms.Label();
+            this.tBox_C2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.EdicionToolStripMenuItem = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargarConfiguraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guardarConfiguraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tBox_HG = new System.Windows.Forms.TextBox();
+            this.label_HG = new System.Windows.Forms.Label();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,7 +144,10 @@
             this.tabHttp.SuspendLayout();
             this.tabFtp.SuspendLayout();
             this.tabSms.SuspendLayout();
+            this.gBoxAlertasSMS.SuspendLayout();
+            this.gBoxLecturasSMS.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.EdicionToolStripMenuItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -143,7 +160,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnOpen);
             this.groupBox1.Controls.Add(this.cBoxCOMPORT);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(238, 192);
             this.groupBox1.TabIndex = 0;
@@ -225,19 +242,28 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tBoxPassword);
             this.groupBox2.Controls.Add(this.btnModbus);
             this.groupBox2.Controls.Add(this.btnEnter);
             this.groupBox2.Controls.Add(this.btnHelp);
             this.groupBox2.Controls.Add(this.btnExit);
-            this.groupBox2.Location = new System.Drawing.Point(12, 204);
+            this.groupBox2.Location = new System.Drawing.Point(12, 219);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(238, 152);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
+            // tBoxPassword
+            // 
+            this.tBoxPassword.Location = new System.Drawing.Point(121, 19);
+            this.tBoxPassword.Name = "tBoxPassword";
+            this.tBoxPassword.Size = new System.Drawing.Size(90, 20);
+            this.tBoxPassword.TabIndex = 10;
+            this.tBoxPassword.Text = "12345";
+            // 
             // btnModbus
             // 
-            this.btnModbus.Location = new System.Drawing.Point(120, 19);
+            this.btnModbus.Location = new System.Drawing.Point(121, 63);
             this.btnModbus.Name = "btnModbus";
             this.btnModbus.Size = new System.Drawing.Size(90, 23);
             this.btnModbus.TabIndex = 9;
@@ -389,6 +415,7 @@
             // 
             // tBox_AN
             // 
+            this.tBox_AN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tBox_AN.Location = new System.Drawing.Point(97, 25);
             this.tBox_AN.Name = "tBox_AN";
             this.tBox_AN.Size = new System.Drawing.Size(113, 20);
@@ -399,12 +426,12 @@
             // 
             this.groupBox9.Controls.Add(this.groupBox10);
             this.groupBox9.Controls.Add(this.tBoxDataIN);
-            this.groupBox9.Location = new System.Drawing.Point(768, 13);
+            this.groupBox9.Location = new System.Drawing.Point(768, 28);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(524, 343);
             this.groupBox9.TabIndex = 5;
             this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Receiver Control";
+            this.groupBox9.Text = "Consola";
             // 
             // groupBox10
             // 
@@ -474,7 +501,7 @@
             this.Settings.Controls.Add(this.tabHttp);
             this.Settings.Controls.Add(this.tabFtp);
             this.Settings.Controls.Add(this.tabSms);
-            this.Settings.Location = new System.Drawing.Point(256, 12);
+            this.Settings.Location = new System.Drawing.Point(256, 27);
             this.Settings.Name = "Settings";
             this.Settings.SelectedIndex = 0;
             this.Settings.Size = new System.Drawing.Size(506, 278);
@@ -600,6 +627,8 @@
             // tabHttp
             // 
             this.tabHttp.BackColor = System.Drawing.Color.White;
+            this.tabHttp.Controls.Add(this.tBox_HG);
+            this.tabHttp.Controls.Add(this.label_HG);
             this.tabHttp.Controls.Add(this.tBox_HT);
             this.tabHttp.Controls.Add(this.label_HT);
             this.tabHttp.Controls.Add(this.tBox_HU);
@@ -623,7 +652,7 @@
             // 
             // tBox_HT
             // 
-            this.tBox_HT.Location = new System.Drawing.Point(89, 87);
+            this.tBox_HT.Location = new System.Drawing.Point(89, 117);
             this.tBox_HT.Name = "tBox_HT";
             this.tBox_HT.Size = new System.Drawing.Size(66, 20);
             this.tBox_HT.TabIndex = 27;
@@ -632,7 +661,7 @@
             // label_HT
             // 
             this.label_HT.AutoSize = true;
-            this.label_HT.Location = new System.Drawing.Point(19, 90);
+            this.label_HT.Location = new System.Drawing.Point(19, 120);
             this.label_HT.Name = "label_HT";
             this.label_HT.Size = new System.Drawing.Size(44, 13);
             this.label_HT.TabIndex = 28;
@@ -674,7 +703,7 @@
             // 
             // tBox_IE
             // 
-            this.tBox_IE.Location = new System.Drawing.Point(89, 118);
+            this.tBox_IE.Location = new System.Drawing.Point(89, 148);
             this.tBox_IE.Name = "tBox_IE";
             this.tBox_IE.Size = new System.Drawing.Size(66, 20);
             this.tBox_IE.TabIndex = 19;
@@ -683,7 +712,7 @@
             // label_IE
             // 
             this.label_IE.AutoSize = true;
-            this.label_IE.Location = new System.Drawing.Point(19, 121);
+            this.label_IE.Location = new System.Drawing.Point(19, 151);
             this.label_IE.Name = "label_IE";
             this.label_IE.Size = new System.Drawing.Size(59, 13);
             this.label_IE.TabIndex = 20;
@@ -691,7 +720,7 @@
             // 
             // tBox_IS
             // 
-            this.tBox_IS.Location = new System.Drawing.Point(89, 149);
+            this.tBox_IS.Location = new System.Drawing.Point(89, 179);
             this.tBox_IS.Name = "tBox_IS";
             this.tBox_IS.Size = new System.Drawing.Size(66, 20);
             this.tBox_IS.TabIndex = 21;
@@ -700,7 +729,7 @@
             // label_IS
             // 
             this.label_IS.AutoSize = true;
-            this.label_IS.Location = new System.Drawing.Point(19, 152);
+            this.label_IS.Location = new System.Drawing.Point(19, 182);
             this.label_IS.Name = "label_IS";
             this.label_IS.Size = new System.Drawing.Size(60, 13);
             this.label_IS.TabIndex = 22;
@@ -912,16 +941,8 @@
             // 
             // tabSms
             // 
-            this.tabSms.Controls.Add(this.cBox_LS);
-            this.tabSms.Controls.Add(this.ckBox_AL);
-            this.tabSms.Controls.Add(this.label_C2);
-            this.tabSms.Controls.Add(this.tBox_C2);
-            this.tabSms.Controls.Add(this.label_C1);
-            this.tabSms.Controls.Add(this.tBox_C1);
-            this.tabSms.Controls.Add(this.label_C0);
-            this.tabSms.Controls.Add(this.tBox_C0);
-            this.tabSms.Controls.Add(this.label_AL);
-            this.tabSms.Controls.Add(this.label_LS);
+            this.tabSms.Controls.Add(this.gBoxAlertasSMS);
+            this.tabSms.Controls.Add(this.gBoxLecturasSMS);
             this.tabSms.Location = new System.Drawing.Point(4, 22);
             this.tabSms.Name = "tabSms";
             this.tabSms.Size = new System.Drawing.Size(498, 252);
@@ -929,94 +950,81 @@
             this.tabSms.Text = "SMS";
             this.tabSms.UseVisualStyleBackColor = true;
             // 
-            // ckBox_AL
+            // gBoxAlertasSMS
             // 
-            this.ckBox_AL.AutoSize = true;
-            this.ckBox_AL.Location = new System.Drawing.Point(381, 26);
-            this.ckBox_AL.Name = "ckBox_AL";
-            this.ckBox_AL.Size = new System.Drawing.Size(15, 14);
-            this.ckBox_AL.TabIndex = 45;
-            this.ckBox_AL.UseVisualStyleBackColor = true;
-            this.ckBox_AL.Click += new System.EventHandler(this.ckBox_AL_Click);
+            this.gBoxAlertasSMS.Controls.Add(this.ckBox_AA);
+            this.gBoxAlertasSMS.Controls.Add(this.tBox_CA);
+            this.gBoxAlertasSMS.Controls.Add(this.label3);
+            this.gBoxAlertasSMS.Controls.Add(this.label_CA);
+            this.gBoxAlertasSMS.Location = new System.Drawing.Point(6, 137);
+            this.gBoxAlertasSMS.Name = "gBoxAlertasSMS";
+            this.gBoxAlertasSMS.Size = new System.Drawing.Size(482, 112);
+            this.gBoxAlertasSMS.TabIndex = 48;
+            this.gBoxAlertasSMS.TabStop = false;
+            this.gBoxAlertasSMS.Text = "Envío de alertas";
             // 
-            // label_C2
+            // ckBox_AA
             // 
-            this.label_C2.AutoSize = true;
-            this.label_C2.Location = new System.Drawing.Point(28, 87);
-            this.label_C2.Name = "label_C2";
-            this.label_C2.Size = new System.Drawing.Size(42, 13);
-            this.label_C2.TabIndex = 44;
-            this.label_C2.Text = "CEL 3: ";
+            this.ckBox_AA.AutoSize = true;
+            this.ckBox_AA.Location = new System.Drawing.Point(375, 37);
+            this.ckBox_AA.Name = "ckBox_AA";
+            this.ckBox_AA.Size = new System.Drawing.Size(15, 14);
+            this.ckBox_AA.TabIndex = 48;
+            this.ckBox_AA.UseVisualStyleBackColor = true;
+            this.ckBox_AA.Click += new System.EventHandler(this.ckBox_AA_Click);
             // 
-            // tBox_C2
+            // tBox_CA
             // 
-            this.tBox_C2.Location = new System.Drawing.Point(94, 84);
-            this.tBox_C2.Name = "tBox_C2";
-            this.tBox_C2.Size = new System.Drawing.Size(87, 20);
-            this.tBox_C2.TabIndex = 43;
-            this.tBox_C2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_C2_KeyDown);
+            this.tBox_CA.Location = new System.Drawing.Point(82, 33);
+            this.tBox_CA.Name = "tBox_CA";
+            this.tBox_CA.Size = new System.Drawing.Size(87, 20);
+            this.tBox_CA.TabIndex = 41;
+            this.tBox_CA.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_CA_KeyDown);
             // 
-            // label_C1
+            // label3
             // 
-            this.label_C1.AutoSize = true;
-            this.label_C1.Location = new System.Drawing.Point(28, 56);
-            this.label_C1.Name = "label_C1";
-            this.label_C1.Size = new System.Drawing.Size(42, 13);
-            this.label_C1.TabIndex = 42;
-            this.label_C1.Text = "CEL 2: ";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(262, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Activar alerta SMS: ";
             // 
-            // tBox_C1
+            // label_CA
             // 
-            this.tBox_C1.Location = new System.Drawing.Point(94, 53);
-            this.tBox_C1.Name = "tBox_C1";
-            this.tBox_C1.Size = new System.Drawing.Size(87, 20);
-            this.tBox_C1.TabIndex = 41;
-            this.tBox_C1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_C1_KeyDown);
+            this.label_CA.AutoSize = true;
+            this.label_CA.Location = new System.Drawing.Point(16, 36);
+            this.label_CA.Name = "label_CA";
+            this.label_CA.Size = new System.Drawing.Size(42, 13);
+            this.label_CA.TabIndex = 42;
+            this.label_CA.Text = "CEL 1: ";
             // 
-            // label_C0
+            // gBoxLecturasSMS
             // 
-            this.label_C0.AutoSize = true;
-            this.label_C0.Location = new System.Drawing.Point(28, 25);
-            this.label_C0.Name = "label_C0";
-            this.label_C0.Size = new System.Drawing.Size(42, 13);
-            this.label_C0.TabIndex = 40;
-            this.label_C0.Text = "CEL 1: ";
+            this.gBoxLecturasSMS.Controls.Add(this.tBox_C0);
+            this.gBoxLecturasSMS.Controls.Add(this.cBox_LS);
+            this.gBoxLecturasSMS.Controls.Add(this.ckBox_AL);
+            this.gBoxLecturasSMS.Controls.Add(this.label_C0);
+            this.gBoxLecturasSMS.Controls.Add(this.label_AL);
+            this.gBoxLecturasSMS.Controls.Add(this.tBox_C1);
+            this.gBoxLecturasSMS.Controls.Add(this.label_LS);
+            this.gBoxLecturasSMS.Controls.Add(this.label_C2);
+            this.gBoxLecturasSMS.Controls.Add(this.label_C1);
+            this.gBoxLecturasSMS.Controls.Add(this.tBox_C2);
+            this.gBoxLecturasSMS.Location = new System.Drawing.Point(8, 8);
+            this.gBoxLecturasSMS.Name = "gBoxLecturasSMS";
+            this.gBoxLecturasSMS.Size = new System.Drawing.Size(481, 124);
+            this.gBoxLecturasSMS.TabIndex = 47;
+            this.gBoxLecturasSMS.TabStop = false;
+            this.gBoxLecturasSMS.Text = "Envío de lecturas";
             // 
             // tBox_C0
             // 
-            this.tBox_C0.Location = new System.Drawing.Point(94, 22);
+            this.tBox_C0.Location = new System.Drawing.Point(80, 30);
             this.tBox_C0.Name = "tBox_C0";
             this.tBox_C0.Size = new System.Drawing.Size(87, 20);
             this.tBox_C0.TabIndex = 39;
             this.tBox_C0.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_C0_KeyDown);
-            // 
-            // label_AL
-            // 
-            this.label_AL.AutoSize = true;
-            this.label_AL.Location = new System.Drawing.Point(297, 25);
-            this.label_AL.Name = "label_AL";
-            this.label_AL.Size = new System.Drawing.Size(72, 13);
-            this.label_AL.TabIndex = 36;
-            this.label_AL.Text = "Activar SMS: ";
-            // 
-            // label_LS
-            // 
-            this.label_LS.AutoSize = true;
-            this.label_LS.Location = new System.Drawing.Point(261, 56);
-            this.label_LS.Name = "label_LS";
-            this.label_LS.Size = new System.Drawing.Size(108, 13);
-            this.label_LS.TabIndex = 38;
-            this.label_LS.Text = "Hora de envío SMS: ";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnLoadConf);
-            this.groupBox3.Controls.Add(this.btnCleanTBox);
-            this.groupBox3.Location = new System.Drawing.Point(259, 292);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(498, 63);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
             // 
             // cBox_LS
             // 
@@ -1046,33 +1054,178 @@
             "21:00",
             "22:00",
             "23:00"});
-            this.cBox_LS.Location = new System.Drawing.Point(381, 53);
+            this.cBox_LS.Location = new System.Drawing.Point(373, 61);
             this.cBox_LS.Name = "cBox_LS";
             this.cBox_LS.Size = new System.Drawing.Size(67, 21);
             this.cBox_LS.TabIndex = 46;
             this.cBox_LS.SelectionChangeCommitted += new System.EventHandler(this.cBox_LS_SelectionChangeCommitted);
             // 
+            // ckBox_AL
+            // 
+            this.ckBox_AL.AutoSize = true;
+            this.ckBox_AL.Location = new System.Drawing.Point(373, 34);
+            this.ckBox_AL.Name = "ckBox_AL";
+            this.ckBox_AL.Size = new System.Drawing.Size(15, 14);
+            this.ckBox_AL.TabIndex = 45;
+            this.ckBox_AL.UseVisualStyleBackColor = true;
+            this.ckBox_AL.Click += new System.EventHandler(this.ckBox_AL_Click);
+            // 
+            // label_C0
+            // 
+            this.label_C0.AutoSize = true;
+            this.label_C0.Location = new System.Drawing.Point(14, 33);
+            this.label_C0.Name = "label_C0";
+            this.label_C0.Size = new System.Drawing.Size(42, 13);
+            this.label_C0.TabIndex = 40;
+            this.label_C0.Text = "CEL 1: ";
+            // 
+            // label_AL
+            // 
+            this.label_AL.AutoSize = true;
+            this.label_AL.Location = new System.Drawing.Point(289, 33);
+            this.label_AL.Name = "label_AL";
+            this.label_AL.Size = new System.Drawing.Size(72, 13);
+            this.label_AL.TabIndex = 36;
+            this.label_AL.Text = "Activar SMS: ";
+            // 
+            // tBox_C1
+            // 
+            this.tBox_C1.Location = new System.Drawing.Point(80, 61);
+            this.tBox_C1.Name = "tBox_C1";
+            this.tBox_C1.Size = new System.Drawing.Size(87, 20);
+            this.tBox_C1.TabIndex = 41;
+            this.tBox_C1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_C1_KeyDown);
+            // 
+            // label_LS
+            // 
+            this.label_LS.AutoSize = true;
+            this.label_LS.Location = new System.Drawing.Point(253, 64);
+            this.label_LS.Name = "label_LS";
+            this.label_LS.Size = new System.Drawing.Size(108, 13);
+            this.label_LS.TabIndex = 38;
+            this.label_LS.Text = "Hora de envío SMS: ";
+            // 
+            // label_C2
+            // 
+            this.label_C2.AutoSize = true;
+            this.label_C2.Location = new System.Drawing.Point(14, 95);
+            this.label_C2.Name = "label_C2";
+            this.label_C2.Size = new System.Drawing.Size(42, 13);
+            this.label_C2.TabIndex = 44;
+            this.label_C2.Text = "CEL 3: ";
+            // 
+            // label_C1
+            // 
+            this.label_C1.AutoSize = true;
+            this.label_C1.Location = new System.Drawing.Point(14, 64);
+            this.label_C1.Name = "label_C1";
+            this.label_C1.Size = new System.Drawing.Size(42, 13);
+            this.label_C1.TabIndex = 42;
+            this.label_C1.Text = "CEL 2: ";
+            // 
+            // tBox_C2
+            // 
+            this.tBox_C2.Location = new System.Drawing.Point(80, 92);
+            this.tBox_C2.Name = "tBox_C2";
+            this.tBox_C2.Size = new System.Drawing.Size(87, 20);
+            this.tBox_C2.TabIndex = 43;
+            this.tBox_C2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_C2_KeyDown);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnLoadConf);
+            this.groupBox3.Controls.Add(this.btnCleanTBox);
+            this.groupBox3.Location = new System.Drawing.Point(256, 307);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(506, 63);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            // 
+            // EdicionToolStripMenuItem
+            // 
+            this.EdicionToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.EdicionToolStripMenuItem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.acercaDeToolStripMenuItem});
+            this.EdicionToolStripMenuItem.Location = new System.Drawing.Point(0, 0);
+            this.EdicionToolStripMenuItem.Name = "EdicionToolStripMenuItem";
+            this.EdicionToolStripMenuItem.Size = new System.Drawing.Size(1304, 24);
+            this.EdicionToolStripMenuItem.TabIndex = 8;
+            this.EdicionToolStripMenuItem.Text = "Archivo";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cargarConfiguraciónToolStripMenuItem,
+            this.guardarConfiguraciónToolStripMenuItem});
+            this.archivoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Historic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.archivoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // cargarConfiguraciónToolStripMenuItem
+            // 
+            this.cargarConfiguraciónToolStripMenuItem.Name = "cargarConfiguraciónToolStripMenuItem";
+            this.cargarConfiguraciónToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.cargarConfiguraciónToolStripMenuItem.Text = "Cargar Configuración";
+            this.cargarConfiguraciónToolStripMenuItem.Click += new System.EventHandler(this.cargarConfiguraciónToolStripMenuItem_Click);
+            // 
+            // guardarConfiguraciónToolStripMenuItem
+            // 
+            this.guardarConfiguraciónToolStripMenuItem.Name = "guardarConfiguraciónToolStripMenuItem";
+            this.guardarConfiguraciónToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.guardarConfiguraciónToolStripMenuItem.Text = "Guardar Configuración";
+            this.guardarConfiguraciónToolStripMenuItem.Click += new System.EventHandler(this.guardarConfiguraciónToolStripMenuItem_Click);
+            // 
+            // tBox_HG
+            // 
+            this.tBox_HG.Location = new System.Drawing.Point(89, 87);
+            this.tBox_HG.Name = "tBox_HG";
+            this.tBox_HG.Size = new System.Drawing.Size(149, 20);
+            this.tBox_HG.TabIndex = 29;
+            this.tBox_HG.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_HG_KeyDown);
+            // 
+            // label_HG
+            // 
+            this.label_HG.AutoSize = true;
+            this.label_HG.Location = new System.Drawing.Point(19, 90);
+            this.label_HG.Name = "label_HG";
+            this.label_HG.Size = new System.Drawing.Size(61, 13);
+            this.label_HG.TabIndex = 30;
+            this.label_HG.Text = "Ruta GET: ";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1304, 363);
+            this.ClientSize = new System.Drawing.Size(1304, 380);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Settings);
             this.Controls.Add(this.groupBox9);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.EdicionToolStripMenuItem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.EdicionToolStripMenuItem;
             this.MaximizeBox = false;
             this.Name = "Main";
-            this.Text = "EAGLE CLI";
+            this.Text = "PIGEON CLI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -1086,9 +1239,15 @@
             this.tabFtp.ResumeLayout(false);
             this.tabFtp.PerformLayout();
             this.tabSms.ResumeLayout(false);
-            this.tabSms.PerformLayout();
+            this.gBoxAlertasSMS.ResumeLayout(false);
+            this.gBoxAlertasSMS.PerformLayout();
+            this.gBoxLecturasSMS.ResumeLayout(false);
+            this.gBoxLecturasSMS.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.EdicionToolStripMenuItem.ResumeLayout(false);
+            this.EdicionToolStripMenuItem.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1183,6 +1342,20 @@
         private System.Windows.Forms.CheckBox ckBox_AL;
         private System.Windows.Forms.ComboBox cBox_LF;
         private System.Windows.Forms.ComboBox cBox_LS;
+        private System.Windows.Forms.GroupBox gBoxAlertasSMS;
+        private System.Windows.Forms.CheckBox ckBox_AA;
+        private System.Windows.Forms.TextBox tBox_CA;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_CA;
+        private System.Windows.Forms.GroupBox gBoxLecturasSMS;
+        private System.Windows.Forms.TextBox tBoxPassword;
+        private System.Windows.Forms.MenuStrip EdicionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargarConfiguraciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarConfiguraciónToolStripMenuItem;
+        private System.Windows.Forms.TextBox tBox_HG;
+        private System.Windows.Forms.Label label_HG;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
     }
 }
 

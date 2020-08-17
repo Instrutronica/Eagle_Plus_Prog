@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComPort", "ComPort\ComPort.csproj", "{60AEB5A7-7049-4EE5-B002-94C5A83F2135}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Eagle-Plus Prog", "Eagle-Plus Prog\Eagle-Plus Prog.vdproj", "{59E2ED8D-0407-49F5-A84D-31C2BCAE9B2B}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Pigeon Prog", "Eagle-Plus Prog\Eagle-Plus Prog.vdproj", "{59E2ED8D-0407-49F5-A84D-31C2BCAE9B2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
