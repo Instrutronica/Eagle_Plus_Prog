@@ -15,5 +15,5 @@ C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.csproj.Genera
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.csproj.CoreCompileInputs.cache
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.exe
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.pdb
-C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.csprojAssemblyReference.cache
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.Main.resources
+C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Debug\ComPort.csprojAssemblyReference.cache
