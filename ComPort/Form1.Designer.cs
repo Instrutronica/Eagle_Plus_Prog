@@ -33,12 +33,12 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.lblStatusCom = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnRefreshPort = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnOpen = new System.Windows.Forms.Button();
             this.cBoxCOMPORT = new System.Windows.Forms.ComboBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.grpBoxPruebas = new System.Windows.Forms.GroupBox();
             this.btnFTP = new System.Windows.Forms.Button();
             this.btnSMS = new System.Windows.Forms.Button();
@@ -166,7 +166,7 @@
             this.label_C2 = new System.Windows.Forms.Label();
             this.label_C1 = new System.Windows.Forms.Label();
             this.tBox_C2 = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabMedidor = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.sBox_MT = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -179,6 +179,13 @@
             this.sBox_SB = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.sBox_SP = new System.Windows.Forms.ComboBox();
+            this.tabMemoria = new System.Windows.Forms.TabPage();
+            this.btnDeleteMem = new System.Windows.Forms.Button();
+            this.btnSaveMem = new System.Windows.Forms.Button();
+            this.grdMemoria = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLoadMem = new System.Windows.Forms.Button();
             this.grpBoxLConf = new System.Windows.Forms.GroupBox();
             this.EdicionToolStripMenuItem = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -215,9 +222,11 @@
             this.groupBox18.SuspendLayout();
             this.gBoxAlertasSMS.SuspendLayout();
             this.gBoxLecturasSMS.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabMedidor.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabMemoria.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMemoria)).BeginInit();
             this.grpBoxLConf.SuspendLayout();
             this.EdicionToolStripMenuItem.SuspendLayout();
             this.grpBoxAcceso.SuspendLayout();
@@ -256,13 +265,6 @@
             this.lblStatusCom.Size = new System.Drawing.Size(52, 27);
             this.lblStatusCom.TabIndex = 0;
             this.lblStatusCom.Text = "OFF";
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(266, 20);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(221, 23);
-            this.progressBar1.TabIndex = 2;
             // 
             // btnRefreshPort
             // 
@@ -309,7 +311,13 @@
             this.cBoxCOMPORT.Name = "cBoxCOMPORT";
             this.cBoxCOMPORT.Size = new System.Drawing.Size(121, 21);
             this.cBoxCOMPORT.TabIndex = 0;
-            this.cBoxCOMPORT.SelectedIndexChanged += new System.EventHandler(this.cBoxCOMPORT_SelectedIndexChanged);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(236, 16);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(263, 23);
+            this.progressBar1.TabIndex = 2;
             // 
             // grpBoxPruebas
             // 
@@ -434,7 +442,7 @@
             // 
             // btnLoadConf
             // 
-            this.btnLoadConf.Location = new System.Drawing.Point(138, 21);
+            this.btnLoadConf.Location = new System.Drawing.Point(124, 16);
             this.btnLoadConf.Name = "btnLoadConf";
             this.btnLoadConf.Size = new System.Drawing.Size(103, 23);
             this.btnLoadConf.TabIndex = 36;
@@ -444,7 +452,7 @@
             // 
             // btnCleanTBox
             // 
-            this.btnCleanTBox.Location = new System.Drawing.Point(17, 21);
+            this.btnCleanTBox.Location = new System.Drawing.Point(12, 16);
             this.btnCleanTBox.Name = "btnCleanTBox";
             this.btnCleanTBox.Size = new System.Drawing.Size(103, 23);
             this.btnCleanTBox.TabIndex = 35;
@@ -626,11 +634,12 @@
             this.Settings.Controls.Add(this.tabHttp);
             this.Settings.Controls.Add(this.tabFtp);
             this.Settings.Controls.Add(this.tabSms);
-            this.Settings.Controls.Add(this.tabPage1);
+            this.Settings.Controls.Add(this.tabMedidor);
+            this.Settings.Controls.Add(this.tabMemoria);
             this.Settings.Location = new System.Drawing.Point(256, 27);
             this.Settings.Name = "Settings";
             this.Settings.SelectedIndex = 0;
-            this.Settings.Size = new System.Drawing.Size(506, 315);
+            this.Settings.Size = new System.Drawing.Size(506, 328);
             this.Settings.TabIndex = 6;
             // 
             // tabGeneral
@@ -643,7 +652,7 @@
             this.tabGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(498, 289);
+            this.tabGeneral.Size = new System.Drawing.Size(498, 302);
             this.tabGeneral.TabIndex = 0;
             this.tabGeneral.Text = "General";
             // 
@@ -929,7 +938,7 @@
             this.tabHttp.Location = new System.Drawing.Point(4, 22);
             this.tabHttp.Name = "tabHttp";
             this.tabHttp.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHttp.Size = new System.Drawing.Size(498, 289);
+            this.tabHttp.Size = new System.Drawing.Size(498, 302);
             this.tabHttp.TabIndex = 1;
             this.tabHttp.Text = "HTTP";
             // 
@@ -1239,7 +1248,7 @@
             this.tabFtp.Controls.Add(this.groupBox15);
             this.tabFtp.Location = new System.Drawing.Point(4, 22);
             this.tabFtp.Name = "tabFtp";
-            this.tabFtp.Size = new System.Drawing.Size(498, 289);
+            this.tabFtp.Size = new System.Drawing.Size(498, 302);
             this.tabFtp.TabIndex = 2;
             this.tabFtp.Text = "FTP";
             this.tabFtp.UseVisualStyleBackColor = true;
@@ -1507,7 +1516,7 @@
             this.tabSms.Controls.Add(this.gBoxLecturasSMS);
             this.tabSms.Location = new System.Drawing.Point(4, 22);
             this.tabSms.Name = "tabSms";
-            this.tabSms.Size = new System.Drawing.Size(498, 289);
+            this.tabSms.Size = new System.Drawing.Size(498, 302);
             this.tabSms.TabIndex = 3;
             this.tabSms.Text = "SMS";
             this.tabSms.UseVisualStyleBackColor = true;
@@ -1782,16 +1791,16 @@
             this.tBox_C2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tBox_KeyDown);
             this.tBox_C2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tBox_only_numbers);
             // 
-            // tabPage1
+            // tabMedidor
             // 
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(498, 289);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Medidor";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabMedidor.Controls.Add(this.groupBox3);
+            this.tabMedidor.Controls.Add(this.groupBox2);
+            this.tabMedidor.Location = new System.Drawing.Point(4, 22);
+            this.tabMedidor.Name = "tabMedidor";
+            this.tabMedidor.Size = new System.Drawing.Size(498, 302);
+            this.tabMedidor.TabIndex = 4;
+            this.tabMedidor.Text = "Medidor";
+            this.tabMedidor.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -1945,14 +1954,86 @@
             this.sBox_SP.TabIndex = 0;
             this.sBox_SP.SelectionChangeCommitted += new System.EventHandler(this.cbBox_SelectionChangeCommitted);
             // 
+            // tabMemoria
+            // 
+            this.tabMemoria.Controls.Add(this.btnDeleteMem);
+            this.tabMemoria.Controls.Add(this.btnSaveMem);
+            this.tabMemoria.Controls.Add(this.grdMemoria);
+            this.tabMemoria.Controls.Add(this.btnLoadMem);
+            this.tabMemoria.Location = new System.Drawing.Point(4, 22);
+            this.tabMemoria.Name = "tabMemoria";
+            this.tabMemoria.Size = new System.Drawing.Size(498, 302);
+            this.tabMemoria.TabIndex = 5;
+            this.tabMemoria.Text = "Memoria";
+            this.tabMemoria.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteMem
+            // 
+            this.btnDeleteMem.AccessibleDescription = "AT+DM";
+            this.btnDeleteMem.Location = new System.Drawing.Point(232, 273);
+            this.btnDeleteMem.Name = "btnDeleteMem";
+            this.btnDeleteMem.Size = new System.Drawing.Size(113, 23);
+            this.btnDeleteMem.TabIndex = 9;
+            this.btnDeleteMem.Text = "Borrar memoria";
+            this.btnDeleteMem.UseVisualStyleBackColor = true;
+            this.btnDeleteMem.Click += new System.EventHandler(this.btnDeleteMem_Click);
+            // 
+            // btnSaveMem
+            // 
+            this.btnSaveMem.AccessibleDescription = "";
+            this.btnSaveMem.Location = new System.Drawing.Point(120, 273);
+            this.btnSaveMem.Name = "btnSaveMem";
+            this.btnSaveMem.Size = new System.Drawing.Size(103, 23);
+            this.btnSaveMem.TabIndex = 8;
+            this.btnSaveMem.Text = "Guardar memoria";
+            this.btnSaveMem.UseVisualStyleBackColor = true;
+            this.btnSaveMem.Click += new System.EventHandler(this.btnSaveMem_Click);
+            // 
+            // grdMemoria
+            // 
+            this.grdMemoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMemoria.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.grdMemoria.Location = new System.Drawing.Point(2, 7);
+            this.grdMemoria.Name = "grdMemoria";
+            this.grdMemoria.ReadOnly = true;
+            this.grdMemoria.Size = new System.Drawing.Size(493, 260);
+            this.grdMemoria.TabIndex = 7;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "#";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 40;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Lectura";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 600;
+            // 
+            // btnLoadMem
+            // 
+            this.btnLoadMem.AccessibleDescription = "AT+SM";
+            this.btnLoadMem.Location = new System.Drawing.Point(8, 273);
+            this.btnLoadMem.Name = "btnLoadMem";
+            this.btnLoadMem.Size = new System.Drawing.Size(103, 23);
+            this.btnLoadMem.TabIndex = 0;
+            this.btnLoadMem.Text = "Cargar memoria";
+            this.btnLoadMem.UseVisualStyleBackColor = true;
+            this.btnLoadMem.Click += new System.EventHandler(this.btnLoadMem_Click);
+            // 
             // grpBoxLConf
             // 
             this.grpBoxLConf.Controls.Add(this.btnLoadConf);
             this.grpBoxLConf.Controls.Add(this.progressBar1);
             this.grpBoxLConf.Controls.Add(this.btnCleanTBox);
-            this.grpBoxLConf.Location = new System.Drawing.Point(256, 348);
+            this.grpBoxLConf.Location = new System.Drawing.Point(256, 355);
             this.grpBoxLConf.Name = "grpBoxLConf";
-            this.grpBoxLConf.Size = new System.Drawing.Size(506, 56);
+            this.grpBoxLConf.Size = new System.Drawing.Size(506, 49);
             this.grpBoxLConf.TabIndex = 7;
             this.grpBoxLConf.TabStop = false;
             // 
@@ -2005,8 +2086,8 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.ayudaToolStripMenuItem.Text = "PIGEON CLI V1.0.2";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ayudaToolStripMenuItem.Text = "PIGEON CLI V1.0.3";
             // 
             // grpBoxAcceso
             // 
@@ -2123,11 +2204,13 @@
             this.gBoxAlertasSMS.PerformLayout();
             this.gBoxLecturasSMS.ResumeLayout(false);
             this.gBoxLecturasSMS.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
+            this.tabMedidor.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabMemoria.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdMemoria)).EndInit();
             this.grpBoxLConf.ResumeLayout(false);
             this.EdicionToolStripMenuItem.ResumeLayout(false);
             this.EdicionToolStripMenuItem.PerformLayout();
@@ -2288,7 +2371,7 @@
         private System.Windows.Forms.TextBox tBox_TS;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabMedidor;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox sBox_MT;
         private System.Windows.Forms.Label label25;
@@ -2301,6 +2384,13 @@
         private System.Windows.Forms.ComboBox sBox_SP;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox tBox_SS;
+        private System.Windows.Forms.TabPage tabMemoria;
+        private System.Windows.Forms.Button btnLoadMem;
+        private System.Windows.Forms.DataGridView grdMemoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btnDeleteMem;
+        private System.Windows.Forms.Button btnSaveMem;
     }
 }
 
