@@ -198,6 +198,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.sBoxUSER = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.grpBoxPruebas.SuspendLayout();
@@ -230,6 +241,7 @@
             this.grpBoxLConf.SuspendLayout();
             this.EdicionToolStripMenuItem.SuspendLayout();
             this.grpBoxAcceso.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -336,9 +348,9 @@
             this.btnFTP.AccessibleDescription = "AT+EF";
             this.btnFTP.Location = new System.Drawing.Point(123, 53);
             this.btnFTP.Name = "btnFTP";
-            this.btnFTP.Size = new System.Drawing.Size(90, 23);
+            this.btnFTP.Size = new System.Drawing.Size(103, 23);
             this.btnFTP.TabIndex = 12;
-            this.btnFTP.Text = "Enviar FTP";
+            this.btnFTP.Text = "Enviar FTP (UVA)";
             this.btnFTP.UseMnemonic = false;
             this.btnFTP.UseVisualStyleBackColor = true;
             this.btnFTP.Click += new System.EventHandler(this.btn_Click);
@@ -348,9 +360,9 @@
             this.btnSMS.AccessibleDescription = "AT+ES";
             this.btnSMS.Location = new System.Drawing.Point(123, 15);
             this.btnSMS.Name = "btnSMS";
-            this.btnSMS.Size = new System.Drawing.Size(90, 23);
+            this.btnSMS.Size = new System.Drawing.Size(103, 23);
             this.btnSMS.TabIndex = 11;
-            this.btnSMS.Text = "Enviar SMS";
+            this.btnSMS.Text = "Enviar SMS (UVA)";
             this.btnSMS.UseMnemonic = false;
             this.btnSMS.UseVisualStyleBackColor = true;
             this.btnSMS.Click += new System.EventHandler(this.btn_Click);
@@ -1793,6 +1805,7 @@
             // 
             // tabMedidor
             // 
+            this.tabMedidor.Controls.Add(this.groupBox4);
             this.tabMedidor.Controls.Add(this.groupBox3);
             this.tabMedidor.Controls.Add(this.groupBox2);
             this.tabMedidor.Location = new System.Drawing.Point(4, 22);
@@ -2086,7 +2099,7 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.ayudaToolStripMenuItem.Text = "PIGEON CLI V1.0.3";
             // 
             // grpBoxAcceso
@@ -2143,6 +2156,120 @@
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Contraseña: ";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label31);
+            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.label29);
+            this.groupBox4.Controls.Add(this.comboBox1);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.textBox2);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.groupBox4.Location = new System.Drawing.Point(8, 156);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(480, 143);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Medición de volumen por pulsos";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label27.Location = new System.Drawing.Point(244, 43);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(69, 13);
+            this.label27.TabIndex = 7;
+            this.label27.Text = "Multiplicador:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.AccessibleDescription = "AT+SS";
+            this.textBox1.Location = new System.Drawing.Point(330, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(90, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AccessibleDescription = "AT+SC";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Flanco de subida",
+            "Flanco de bajada"});
+            this.comboBox1.Location = new System.Drawing.Point(330, 92);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(90, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label28.Location = new System.Drawing.Point(244, 95);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(81, 13);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "Tipo de Flanco:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label29.Location = new System.Drawing.Point(26, 43);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(51, 13);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Volumen:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.AccessibleDescription = "AT+SS";
+            this.textBox2.Location = new System.Drawing.Point(112, 40);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(90, 20);
+            this.textBox2.TabIndex = 8;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label30.Location = new System.Drawing.Point(26, 69);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 11;
+            this.label30.Text = "Pulsos:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.AccessibleDescription = "AT+SS";
+            this.textBox3.Location = new System.Drawing.Point(112, 66);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(90, 20);
+            this.textBox3.TabIndex = 10;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label31.Location = new System.Drawing.Point(244, 69);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(85, 13);
+            this.label31.TabIndex = 13;
+            this.label31.Text = "Ancho de Pulso:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.AccessibleDescription = "AT+SS";
+            this.textBox4.Location = new System.Drawing.Point(330, 66);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(90, 20);
+            this.textBox4.TabIndex = 12;
             // 
             // Main
             // 
@@ -2216,6 +2343,8 @@
             this.EdicionToolStripMenuItem.PerformLayout();
             this.grpBoxAcceso.ResumeLayout(false);
             this.grpBoxAcceso.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2391,6 +2520,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnDeleteMem;
         private System.Windows.Forms.Button btnSaveMem;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

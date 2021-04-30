@@ -7,4 +7,3 @@ C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Release\ComPort.csproj.Core
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Release\ComPort.exe
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Release\ComPort.pdb
 C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Release\ComPort.Main.resources
-C:\Users\JoséDavid\source\repos\ComPort\ComPort\obj\Release\ComPort.csprojAssemblyReference.cache

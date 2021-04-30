@@ -132,7 +132,7 @@ namespace ComPort
             btnClose.Enabled = false;
             btnSaveMem.Enabled = false;
             serialPort1.DtrEnable = false;
-            serialPort1.RtsEnable = true;
+            serialPort1.RtsEnable = false;
             serialPort1.BaudRate = 9600;
             serialPort1.DataBits = 8;
             serialPort1.StopBits = StopBits.One;
@@ -155,6 +155,8 @@ namespace ComPort
                     disableReceiverControl = false;
                     serialPort1.PortName = cBoxCOMPORT.Text;
                     serialPort1.Open();
+                    serialPort1.DtrEnable = true;
+                    serialPort1.RtsEnable = true;
                     btnOpen.Enabled = false;
                     btnClose.Enabled = true;
                     grpBoxAcceso.Enabled = true;
@@ -185,6 +187,8 @@ namespace ComPort
             if (receivingData == false)
             {
                 serialPort1.Close();
+                serialPort1.DtrEnable = false;
+                serialPort1.RtsEnable = false;
                 btnOpen.Enabled = true;
                 btnClose.Enabled = false;
                 lblStatusCom.Text = "OFF";
@@ -192,6 +196,7 @@ namespace ComPort
                 grpBoxLConf.Enabled = false;
                 grpBoxPruebas.Enabled = false;
                 grpBoxAcceso.Enabled = false;
+                tBoxDataIN.Text = "";
             }
         }
 
@@ -802,6 +807,7 @@ namespace ComPort
                         if (dataRcv[1] == "0") ckBox_HM.Checked = false;
                         if (dataRcv[1] == "1") ckBox_HM.Checked = true;
                     }
+                    
                     progressBar1.Value = 98;
 
                     disableReceiverControl = false;
@@ -825,7 +831,7 @@ namespace ComPort
                         sBox_MT.Items[1] = "Panametrics DF868";
                         sBox_MT.Items[2] = "ModMAG M2000";
                         sBox_MT.Items[3] = "ModMAG M1000";
-                        sBox_MT.Items[4] = "Sitrans MAG8000";
+                        sBox_MT.Items[4] = "TSONIC T3-1";
                     }
                     progressBar1.Value = 100;
                     Settings.Enabled = true;
